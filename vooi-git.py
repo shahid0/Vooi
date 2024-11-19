@@ -54,13 +54,13 @@ class VooiDC:
         custom_fig = Figlet(font='slant')
         if os.name == "nt":
             custom_fig = Figlet(font='Stforek')
-        os.system("title Rambeboy BOT" if os.name == "nt" else "clear")
+        os.system("title Shadow BOT" if os.name == "nt" else "clear")
         os.system("cls" if os.name == "nt" else "clear")
     
         print('')
         print_gradient_text(custom_fig.renderText('RAMBEBOY'), VooiDC.start_color, VooiDC.end_color)
-        print(f"{Fore.GREEN}[+] Created by Nofan Rambe !{Fore.RESET}")
-        print(f"{Fore.YELLOW}[+] Join here https://github.com/Rambeboy {Fore.RESET}")
+        print(f"{Fore.GREEN}[+] Created by shadow !{Fore.RESET}")
+        print(f"{Fore.YELLOW}[+] Join here https://github.com/shadowhere {Fore.RESET}")
         print('')
     def get_headers(self):
         headers = self.base_headers.copy()
