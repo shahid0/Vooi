@@ -1,0 +1,21 @@
+name: Run Vooi Script
+
+on:
+  schedule:
+    - cron: "*/10 * * * *" # Runs every 10 minutes
+
+jobs:
+  run-vooi:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v3
+
+    - name: Create data.txt with secret value
+      env:
+        DATA_SECRET: ${{ secrets.DATA }}
+      run: echo "$DATA_SECRET" > data.txt
+
+    - name: Run vooi-git.py
+      run: python3 vooi-git.py
