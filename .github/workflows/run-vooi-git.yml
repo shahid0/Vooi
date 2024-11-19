@@ -3,6 +3,7 @@ name: Run Vooi Script
 on:
   schedule:
     - cron: "*/10 * * * *" # Runs every 10 minutes
+  workflow_dispatch: # Allows manual run of the workflow
 
 jobs:
   run-vooi:
@@ -11,6 +12,16 @@ jobs:
     steps:
     - name: Checkout code
       uses: actions/checkout@v3
+
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: "3.x" # Use the desired Python version
+
+    - name: Install dependencies
+      run: |
+        python3 -m pip install --upgrade pip
+        pip install -r requirements.txt
 
     - name: Create data.txt with secret value
       env:
